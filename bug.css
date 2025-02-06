@@ -1,0 +1,11 @@
+The following CSS code uses a pseudo-class selector incorrectly, resulting in unexpected behavior:
+
+```css
+.my-element:hover + .sibling-element { /* Incorrect usage of adjacent sibling selector*/
+  background-color: yellow;
+}
+```
+
+This code intends to change the background color of `.sibling-element` when `.my-element` is hovered. However, the adjacent sibling combinator (`+`) only selects the immediately following sibling. If there are other elements between `.my-element` and `.sibling-element`, the styling won't apply.
+
+This is a common mistake in CSS that arises from a misunderstanding of the adjacent sibling combinator.  Another potential issue is specificity conflicts, where other styles overwrite this rule, particularly if the latter is very specific (id selectors or inline styles).
