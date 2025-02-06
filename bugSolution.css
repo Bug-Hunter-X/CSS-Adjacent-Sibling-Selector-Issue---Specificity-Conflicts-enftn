@@ -1,0 +1,17 @@
+To fix this, we can use the general sibling combinator (`~`) which selects all following siblings:
+
+```css
+.my-element:hover ~ .sibling-element {
+  background-color: yellow;
+}
+```
+
+Or, if we only want to style direct children of a parent element, we can use a more specific selector:
+
+```css
+.parent-element:hover .my-element ~ .sibling-element {
+  background-color: yellow;
+}
+```
+
+Also, always check for specificity conflicts. If the above doesn't work, investigate which styles have higher specificity and adjust them accordingly.  Consider using the `!important` flag as a last resort to override specificity, but be mindful of the potential drawbacks of using `!important`.
